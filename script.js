@@ -23,14 +23,17 @@ function playRound(playerSelection, computerSelection) {
   if (playerSelection == computerSelection) {
     outcome = "tie";
     console.log("Tie, no winner this round.")
+    alert("Tie, no winner this round.")
   } else if ((playerSelection == "rock" && computerSelection == "scissors") ||
   (playerSelection == "paper" && computerSelection == "rock") ||
   (playerSelection == "scissors" && computerSelection == "paper")) {
     outcome = "player";
     console.log("Player wins the round!")
+    alert("Player wins the round!")
   } else {
     outcome = "computer";
     console.log("Computer wins the round!")
+    alert("Computer wins the round!")
   }
 
   return outcome;
@@ -56,10 +59,13 @@ function game() {
   // Print the results of the game
   if (playerScore > computerScore) {
     console.log("Player wins the game!");
+    alert("Player wins the game!");
   } else if (playerScore < computerScore) {
     console.log("Computer wins the game!");
+    alert("Computer wins the game!");
   } else {
     console.log("Tie game.");
+    alert("Tie game.");
   }
 }
 
