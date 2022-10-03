@@ -16,22 +16,51 @@ function getComputerChoice() {
 
 function playRound(playerSelection, computerSelection) {
   playerSelection = playerSelection.toLowerCase();
-  console.log(playerSelection)
-  console.log(computerSelection)
+  if (playerSelection != "rock" && playerSelection != "paper" && playerSelection != "scissors" ) {
+    return undefined;
+  }
   let outcome = "";
   if (playerSelection == computerSelection) {
     outcome = "tie";
+    console.log("Tie, no winner this round.")
   } else if ((playerSelection == "rock" && computerSelection == "scissors") ||
   (playerSelection == "paper" && computerSelection == "rock") ||
   (playerSelection == "scissors" && computerSelection == "paper")) {
     outcome = "player";
+    console.log("Player wins the round!")
   } else {
     outcome = "computer";
+    console.log("Computer wins the round!")
   }
 
   return outcome;
 }
 
-const playerSelection = "Rock";
-const computerSelection = getComputerChoice();
-console.log (playRound(playerSelection, computerSelection));
+function game() {
+  let roundsTotal = 5;
+  let playerScore = computerScore = 0;
+
+  for (let i = 0; i < roundsTotal; i++) {
+    let computerSelection = getComputerChoice();
+    let playerSelection = prompt("Enter rock, paper, or scissors:");
+    let outcome = playRound(playerSelection, computerSelection);
+    
+    // Track the score based on the outcome returned
+    if (outcome == "player") {
+      playerScore += 1;
+    } else if (outcome == "computer") {
+      computerScore += 1;
+    }
+  }
+
+  // Print the results of the game
+  if (playerScore > computerScore) {
+    console.log("Player wins the game!");
+  } else if (playerScore < computerScore) {
+    console.log("Computer wins the game!");
+  } else {
+    console.log("Tie game.");
+  }
+}
+
+game()
