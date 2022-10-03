@@ -58,11 +58,11 @@ function game() {
 
   // Print the results of the game
   if (playerScore > computerScore) {
-    console.log("Player wins the game!");
-    alert("Player wins the game!");
+    console.log("Player wins the game, congratulations!");
+    alert("Player wins the game, congratulations!");
   } else if (playerScore < computerScore) {
-    console.log("Computer wins the game!");
-    alert("Computer wins the game!");
+    console.log("Computer wins the game, better luck next time.");
+    alert("Computer wins the game, better luck next time.");
   } else {
     console.log("Tie game.");
     alert("Tie game.");
