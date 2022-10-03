@@ -25,8 +25,8 @@ function playRound(playerSelection, computerSelection) {
     console.log("Tie, no winner this round.")
     alert("Tie, no winner this round.")
   } else if ((playerSelection == "rock" && computerSelection == "scissors") ||
-  (playerSelection == "paper" && computerSelection == "rock") ||
-  (playerSelection == "scissors" && computerSelection == "paper")) {
+    (playerSelection == "paper" && computerSelection == "rock") ||
+    (playerSelection == "scissors" && computerSelection == "paper")) {
     outcome = "player";
     console.log("Player wins the round!")
     alert("Player wins the round!")
