@@ -1,1 +1,2 @@
-# Rock Paper Scissors Game for The Odin Project
+# Rock Paper Scissors Game
+Rock-paper-scissors game, project exercise for The Odin Project.
