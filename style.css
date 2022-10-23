@@ -19,7 +19,7 @@
   font-size: 24px;
 }
 
-.button-box {
+.btn-box {
   display: flex;
   justify-content: center;
   gap: 1em;

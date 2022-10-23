@@ -5,30 +5,27 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href = "style.css">
-  <!-- <script src="script.js" defer></script> -->
-  <title>Rock Paper Scissors </title>
+  <script src="script.js" defer></script>
+  <title>Rock Paper Scissors</title>
 </head>
 <body>
   <div class="heading">Rock Paper Scissors</div>
   <div class="description">
     Pick an option below to play now!
   </div>
-  <div class="button-box">
-    <div class="button">
-      <button class="rock">&#9994 Rock</button>
+  <div class="btn-box">
+    <div>
+      <button id="rock">&#9994 Rock</button>
     </div>
-    <div class="button">
-      <button class="paper">&#128400 Paper</button>
+    <div>
+      <button id="paper">&#128400 Paper</button>
     </div>
-    <div class="button">
-      <button class="scissors">&#9996 Scissors</button>
+    <div>
+      <button id="scissors">&#9996 Scissors</button>
     </div>
   </div>
   <div class="announce"></div>
   <div class="results-box">
-    <div class="games-played">
-      Games Played: 0
-    </div>
     <div class="scores">
       <div class="player">
         Player Score: 0
@@ -37,6 +34,7 @@
         Computer Score: 0
       </div>
     </div>
+    <div class="winner"></div>
   </div>
 </body>
 </html>
