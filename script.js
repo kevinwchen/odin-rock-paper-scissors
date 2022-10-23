@@ -14,6 +14,10 @@ function getComputerChoice() {
 }
 
 function playRound(playerSelection, computerSelection, selection, announce) {
+  if (playerScore == 5 || computerScore == 5) {
+    restartGame();
+  }
+
   playerSelection = playerSelection.toLowerCase();
   selection.textContent = "You chose " + playerSelection + "."
   if (playerSelection != "rock" && playerSelection != "paper" && playerSelection != "scissors" ) {
@@ -43,25 +47,29 @@ function updateScore() {
   computerScoreText.textContent = `Computer Score: ${computerScore}`;
 }
 
-// function checkWinner() {
-//   if (playerScore === 5) {
-//     gameButtons.disabled = true;
-//   }
-// }
+function checkWinner() {
+  const winScore = 5;
+  if (playerScore === winScore) {
+    winner.textContent = "Player wins the game!"
+  } else if (computerScore === winScore) {
+    winner.textContent = "Computer wins the game!"
+  }
+}
 
 function restartGame() {
   playerScore = computerScore = 0;
   updateScore();
-  selection.textContent = announce.textContent = "";
+  selection.textContent = announce.textContent = winner.textContent = "";
 }
 
-const gameButtons = document.querySelectorAll('.gameBtn');
 const selection = document.querySelector('.selection');
 const announce = document.querySelector('.announce');
-const restartButton = document.querySelector('#restart');
 const playerScoreText = document.querySelector('.player-score');
 const computerScoreText = document.querySelector('.computer-score');
 const winner = document.querySelector('.winner');
+
+const gameButtons = document.querySelectorAll('.gameBtn');
+const restartButton = document.querySelector('#restart');
 
 let playerScore = 0;
 let computerScore = 0;
@@ -70,7 +78,7 @@ gameButtons.forEach((button) => {
   button.addEventListener('click', () => {
     playRound(button.id, getComputerChoice(), selection, announce);
     updateScore();
-    // checkWinner();
+    checkWinner();
   });
 });
 
