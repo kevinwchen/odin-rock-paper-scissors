@@ -10,31 +10,36 @@
 </head>
 <body>
   <div class="heading">Rock Paper Scissors</div>
-  <div class="description">
-    Pick an option below to play now!
-  </div>
-  <div class="btn-box">
-    <div>
-      <button id="rock">&#9994 Rock</button>
+  <div class="content">
+    <div class="description">
+      Pick an option below to play now!
+      <br>
+      First to 5 wins.
     </div>
-    <div>
-      <button id="paper">&#128400 Paper</button>
+    <div class="btn-box">
+        <button class="gameBtn" id="rock">&#9994 Rock</button>
+        <button class="gameBtn" id="paper">&#128400 Paper</button>
+        <button class="gameBtn" id="scissors">&#9996 Scissors</button>
     </div>
-    <div>
-      <button id="scissors">&#9996 Scissors</button>
-    </div>
-  </div>
-  <div class="announce"></div>
-  <div class="results-box">
-    <div class="scores">
-      <div class="player">
-        Player Score: 0
+    <div class="selection"></div>
+    <div class="announce"></div>
+    <div class="results-box">
+      <div class="scores">
+        <div class="player-score">
+          Player Score: 0
+        </div>
+        <div class = computer-score>
+          Computer Score: 0
+        </div>
       </div>
-      <div class = computer>
-        Computer Score: 0
-      </div>
+      <div class="winner"></div>
     </div>
-    <div class="winner"></div>
+    <div class="restart">
+      <button id="restart">Restart Game</button>
+    </div>
+  </div>
+  <div class="footer">
+    Made by Kevin.
   </div>
 </body>
 </html>
