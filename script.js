@@ -13,13 +13,14 @@ function getComputerChoice() {
   return choice;
 }
 
-function playRound(playerSelection, computerSelection, selection, announce) {
+function playRound(playerSelection, computerSelection, selectionTextP, selectionTextC, announce) {
   if (playerScore == 5 || computerScore == 5) {
     restartGame();
   }
 
   playerSelection = playerSelection.toLowerCase();
-  selection.textContent = "You chose " + playerSelection + "."
+  selectionTextP.textContent = "You chose " + playerSelection + "."
+  selectionTextC.textContent = "Computer chose " + computerSelection + "."
   if (playerSelection != "rock" && playerSelection != "paper" && playerSelection != "scissors" ) {
     return undefined;
   }
@@ -59,10 +60,11 @@ function checkWinner() {
 function restartGame() {
   playerScore = computerScore = 0;
   updateScore();
-  selection.textContent = announce.textContent = winner.textContent = "";
+  selectionTextP.textContent = selectionTextC.textContent = announce.textContent = winner.textContent = "";
 }
 
-const selection = document.querySelector('.selection');
+const selectionTextP = document.querySelector('.selection-player');
+const selectionTextC = document.querySelector('.selection-computer');
 const announce = document.querySelector('.announce');
 const playerScoreText = document.querySelector('.player-score');
 const computerScoreText = document.querySelector('.computer-score');
@@ -76,7 +78,7 @@ let computerScore = 0;
 
 gameButtons.forEach((button) => {
   button.addEventListener('click', () => {
-    playRound(button.id, getComputerChoice(), selection, announce);
+    playRound(button.id, getComputerChoice(), selectionTextP, selectionTextC, announce);
     updateScore();
     checkWinner();
   });
